@@ -1,10 +1,10 @@
-import { useFonts, OpenSans_700Bold, OpenSans_400Regular } from '@expo-google-fonts/open-sans';
-import AppLoading from 'expo-app-loading';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './src/component/Header';
-import Home from './src/pages/Home';
+import { useFonts, OpenSans_700Bold, OpenSans_400Regular } from '@expo-google-fonts/open-sans';
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet,View } from 'react-native';
+import Routes from './src/Config/Routes';
+import AppLoading from 'expo-app-loading';
+
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -17,11 +17,12 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <Header/>
-      <Home/>
-    </View>
+    <>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <Routes/>
+      </View>
+    </>
   );
 }
 
